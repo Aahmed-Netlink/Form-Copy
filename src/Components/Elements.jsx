@@ -1,11 +1,14 @@
-import { useRef } from "react"
+import { useRef, useContext } from "react"
 import { useDrag } from "react-dnd"
-import Modal from "./DialogModal/Modal"
-// import InputLabel from "./InputLabel"
 
-const Elements = ({ element, binnedItems }) => {
+import { FormContext } from "../store/form-Context"
+
+import Modal from "./DialogModal/Modal"
+
+const Elements = ({ element, }) => {
 
     const modal = useRef()
+    const { binnedItems } = useContext(FormContext)
 
     const [{ isDragging }, drag] = useDrag(() => ({
         type: 'element',

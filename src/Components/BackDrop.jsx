@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useDrop } from 'react-dnd'
+import { FormContext } from '../store/form-Context'
 
-const BackDrop = ({ binnedItems }) => {
+const BackDrop = () => {
+
+    const { binnedItems } = useContext(FormContext)
+
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'element',
         drop: () => ({ name: 'the bin' }),

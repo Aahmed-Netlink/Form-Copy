@@ -3,10 +3,10 @@ import { createContext, useState } from "react";
 export const FormContext = createContext({
     binnedItems: [],
     dragable: [],
-    setDragable: () => { }
+    setDragable: () => { },
 })
 
-const FormContextProvider = ({children}) => {
+const FormContextProvider = ({ children }) => {
     const [dragable, setDragable] = useState([])
     const [binnedItems] = useState([])
 
